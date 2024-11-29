@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Part 3 Manipulating The Dom</title>
+</head>
+
+<body>
+    <h1>Part 3: Manipulating The DOM</h1>
+    <ul id="itemList">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <script>
+        let newItem = document.createElement("li");
+        newItem.textContent = "Fourth item";
+        document.getElementById("itemList").appendChild(newItem);
+
+        document.getElementById("itemList").addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                event.target.textContent = "Clicked Item"; 
+            }
+        });
+    </script>
+</body>
+
+</html>
